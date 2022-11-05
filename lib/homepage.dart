@@ -286,9 +286,11 @@ class _HomePageState extends State<HomePage> {
       final idxyz = [
         DateTime.now().toIso8601String(),
         idTc.text,
+        locationData.accuracy ?? 0,
+        locationData.satelliteNumber ?? -1,
         locationData.latitude,
         locationData.longitude,
-        locationData.altitude
+        locationData.altitude,
       ].join(',');
       if (channel != null) {
         if (channel!.closeCode == null) {
